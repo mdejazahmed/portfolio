@@ -1,37 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import {
-  Briefcase,
-  Code,
-  GraduationCap,
-  Linkedin,
-  Mail,
-  User,
-  Layers,
-  Server,
-  Database,
-  GitMerge,
-  TestTube2,
-  Settings,
-  Brain,
-  MapPin,
-  CalendarDays,
-  ExternalLink,
-  ChevronDown,
-  ChevronUp,
-  Menu,
-  X,
-  Sun,
-  Moon,
-  ArrowUpCircle,
-  Star,
-  Image as ImageIcon,
-} from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { portfolioData } from "./constants/portfolioData.jsx";
 import { Hero } from "./components/Hero/Hero.jsx";
 import { Navbar } from "./components/Navbar/Navbar.jsx";
 import { Skills } from "./components/Skills/Skills.jsx";
-import { SectionTitle } from "./components/SectionTitle/SectionTitle.jsx";
 import { Experience } from "./components/Experience/Experience.jsx";
 import { About } from "./components/About/About.jsx";
 import { Projects } from "./components/Projects/Projects.jsx";
@@ -39,6 +11,7 @@ import { Education } from "./components/Education/Education.jsx";
 import { Contact } from "./components/Contact/Contact.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { ScrollToTopButton } from "./components/ScrollToTopButton/ScrollToTopButton.jsx";
+import { CursorFollower } from "./components/CursorFollower/CursorFollower.jsx";
 
 // Main App Component
 export default function App() {
@@ -92,8 +65,9 @@ export default function App() {
     <div
       className={`${
         darkTheme ? "dark" : ""
-      } bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased selection:bg-sky-300 selection:text-sky-900`}
+      } bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased selection:bg-sky-300 selection:text-sky-900 cursor-none`}
     >
+      <CursorFollower />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1.5 bg-sky-500 dark:bg-sky-400 origin-left z-[100]"
         style={{ scaleX }}
